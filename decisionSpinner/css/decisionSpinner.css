@@ -1,0 +1,15 @@
+.divSpin {
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+}
+
+.mainDiv{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -50px;
+    width: 400px;
+    height: 400px;
+}​
