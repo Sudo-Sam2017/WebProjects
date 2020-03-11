@@ -1,29 +1,20 @@
-function spinDiv()
-{
-    var $spinElem = $(".divSpin");
+// $('#spinBtn').click(function() {
+//   $(".fademe").addClass('animated');
+//   setTimeout(function() {
+//     $(".fademe").removeClass('animated');
+//   }, 1500);
+// });
 
-    function rotateDiv(degrees) 
-    {
-     $spinElm.css({
-      '-webkit-transform': 'rotate(' + degrees + 'deg)',
-      '-moz-transform': 'rotate(' + degrees + 'deg)',
-      '-ms-transform': 'rotate(' + degrees + 'deg)',
-      'transform': 'rotate(' + degrees + 'deg)'
-    });
-    }
+// function change() {
+//     var targetDiv = document.getElementById("divSpin");
+//     // targetDiv.classList.remove("divSpin");
+//     targetDiv.classList.add("animated");
+//     setTimeout(function() {
+//         targetDiv.classList.remove("animated"); }, 2000);
+//     }
 
-      $({
-    deg: 0
-  }).animate({
-    deg: 360 * 40
-  }, {
-    duration: 7000,
-    easing: "easeInOutQuart",
-    step: function(now) {
-      var deg = now < 6000 || now > 8000 ? now / 8 : now;
-      rotateDiv(deg);
-    }
-  });
-}
+// function spinMe() {
+//     var targetDiv = document.getElementById("divSpin");
+//     targetDiv.classList.add("animated");
+// }
 
-spinDiv();

@@ -1,7 +1,28 @@
 .divSpin {
-	width: 200px;
-	height: 200px;
-	background-color: blue;
+
+  background:red;
+      border-radius: 50%;
+    behavior: url(PIE.htc);
+     width: 100px;
+    height: 100px;
+    background: blue;
+    border: 3px solid black;
+}
+
+
+.divSpin.animated {
+  animation:spin 7s cubic-bezier(.9,.1,0,1) 0s normal forwards;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(14400deg);
+  }
 }
 
 .mainDiv{
@@ -13,3 +34,4 @@
     width: 400px;
     height: 400px;
 }​
+

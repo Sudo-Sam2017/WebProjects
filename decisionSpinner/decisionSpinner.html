@@ -3,17 +3,34 @@
 <head>
 	<title>Decision Spinner!</title>
 	<link rel="stylesheet" type="text/css" href="css/decisionSpinner.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+ <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+ <script src="js/decisionSpinner.js"></script>
+ <script src="js/Winwheel.js"></script>
 </head>
 <body>
-<script src="js/decisionSpinner.js"></script>
 <div class="mainDiv">
 <h2>Meet Decision Spinner!</h2>
-<div id="divSpin" class="divSpin">Spin!</div>
-<br>
-<br>
-<button id="spinBtn">Spin Me!</button>
+<canvas id='canvas' width='880' height='300'>
+ Canvas not supported, use another browser.
+</canvas>
+<script>
+    var theWheel = new Winwheel({
+        'numSegments' : 6,
+        'segments'      :    
+                [
+                   {'fillStyle' : '#eae56f', 'text' : 'Choice 1'},
+                   {'fillStyle' : '#89f26e', 'text' : 'Choice 2'},
+                   {'fillStyle' : '#7de6ef', 'text' : 'Choice 3'},
+                   {'fillStyle' : '#e7706f', 'text' : 'Choice 4'},
+                   {'fillStyle' : '#eae56f', 'text' : 'Choice 5'},
+                   {'fillStyle' : '#89f26e', 'text' : 'Choice 6'}
+                ]
+    });
+</script>
+<button onclick="spinMe()" id="spinBtn">Spin Me!</button>
 </div>
+
+
 
 </body>
 </html>
