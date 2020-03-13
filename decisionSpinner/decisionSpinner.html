@@ -5,30 +5,72 @@
 	<link rel="stylesheet" type="text/css" href="css/decisionSpinner.css">
  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
  <script src="js/decisionSpinner.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
  <script src="js/Winwheel.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="mainDiv">
-<h2>Meet Decision Spinner!</h2>
-<canvas id='canvas' width='880' height='300'>
+
+	<div id="container">
+
+		<h2>What language should I use?</h2>
+		<div style="height: 100px; width: 100px; border: 2px solid black">
+		<i class="fa fa-arrow-down" style="font-size:48px"></i>
+
+		</div>
+
+<canvas id='canvas' height="400" width="330">
+
  Canvas not supported, use another browser.
-</canvas>
 <script>
+
     var theWheel = new Winwheel({
-        'numSegments' : 6,
-        'segments'      :    
-                [
-                   {'fillStyle' : '#eae56f', 'text' : 'Choice 1'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Choice 2'},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Choice 3'},
-                   {'fillStyle' : '#e7706f', 'text' : 'Choice 4'},
-                   {'fillStyle' : '#eae56f', 'text' : 'Choice 5'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Choice 6'}
-                ]
+        'numSegments' : 4,
+        'textAlignment': 'outer',
+        'pins' : true,
+        'textOrientation' : 'curved',
+        'segments'    :
+        [
+            {'fillStyle' : '#eae56f', 'text' : 'Python'},
+            {'fillStyle' : '#89f26e', 'text' : 'ASP.NET C#'},
+            {'fillStyle' : '#7de6ef', 'text' : 'C++'},
+            {'fillStyle' : '#e7706f', 'text' : 'Java'}
+        ],
+        'animation' :
+        {
+        	'type' : 'spinToStop',
+        	'duration' : 5,
+        	'spins' : 8,
+        	'callbackSound' : playSound,
+        	'soundTrigger' : 'pin'
+        }
     });
+
+
+
+    let audio = new Audio('tick.mp3');
+
+    function playSound()
+    {
+    	audio.pause();
+    	audio.currentTime = 0;
+    	audio.play();
+    }
+
+    function refreshPage()
+    {
+    	window.location.reload();
+    }
+ 
+
+
 </script>
-<button onclick="spinMe()" id="spinBtn">Spin Me!</button>
+ 
+</canvas>
 </div>
+<button onClick="theWheel.startAnimation()">Spin Me!</button>
+<button onClick="refreshPage()">Refresh Page</button>
+
 
 
 
