@@ -14,27 +14,29 @@
 	<div id="container">
 
 		<h2>What language should I use?</h2>
-		<div style="height: 100px; width: 100px; border: 2px solid black">
+		<div style="height: 100%; width: 100%; padding-left: 205px">
 		<i class="fa fa-arrow-down" style="font-size:48px"></i>
 
 		</div>
 
-<canvas id='canvas' height="400" width="330">
+<canvas style="padding-left: 20px" id='canvas' height="520" width="415">
 
  Canvas not supported, use another browser.
 <script>
 
-    var theWheel = new Winwheel({
+    var decisionWheel = new Winwheel({
         'numSegments' : 4,
         'textAlignment': 'outer',
         'pins' : true,
+        'centerX' : 207,
+        'centerY' : 219,
         'textOrientation' : 'curved',
         'segments'    :
         [
-            {'fillStyle' : '#eae56f', 'text' : 'Python'},
-            {'fillStyle' : '#89f26e', 'text' : 'ASP.NET C#'},
-            {'fillStyle' : '#7de6ef', 'text' : 'C++'},
-            {'fillStyle' : '#e7706f', 'text' : 'Java'}
+            {'fillStyle' : '#ffd166', 'text' : 'Python'},
+            {'fillStyle' : '#06d6a0', 'text' : 'ASP.NET C#'},
+            {'fillStyle' : '#118ab2', 'text' : 'C++'},
+            {'fillStyle' : '#e76f51', 'text' : 'Java'}
         ],
         'animation' :
         {
@@ -63,12 +65,11 @@
     }
  
 
-
 </script>
  
 </canvas>
 </div>
-<button onClick="theWheel.startAnimation()">Spin Me!</button>
+<button id="spinBtn" onClick="decisionWheel.startAnimation(); this.disabled=true;">Spin Me!</button>
 <button onClick="refreshPage()">Refresh Page</button>
 
 
