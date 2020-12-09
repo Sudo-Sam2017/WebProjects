@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
-</head>
-<body>
+<title>FirstTrustBank ATM Services</title>
+<link rel=¨stylesheet¨ type=¨text/css¨ href="ATM.css"></head>
+<script src="ATM.js"></script>
+<body style="background-color: #E0ECF8;">
 
 <div style="width: 800px; height: 800px; border: 2px solid blue; background-color: 	#fffff2; position: absolute;
 left: 0;
@@ -16,31 +17,34 @@ max-height: 100%;
 overflow: auto;">
     <div style="border: 4px solid black; text-align: center; margin-left: 40px; margin-top:50px; margin-right:40px;">
         <h4>Welcome to FirstTrustBank ATM Services!!</h4>
-        <h4>Please enter your PIN!</h4>
+        <h4>Please enter your 4 digit PIN!</h4>
     </div>
 
     <div style="text-align: center; margin-left: 40px; margin-top:200px; margin-right:40px;">
-        <input style=" width: 300px; height: 80px;" type="text" id="pinInput" name="pinInput">
+        <input style=" width: 300px; height: 30px;" type="text" id="pinInput" name="pinInput">
     </div>
 
     <div style="text-align: center; margin-left: 40px; margin-top:140px; margin-right:40px;" >
         <div>
-            <button>9</button>
-            <button>8</button>
-            <button>7</button>
+            <button onclick="inputNumber('9')" style="height: 60px; width:60px;">9</button>
+            <button onclick="inputNumber('8')"  style="height: 60px; width:60px;">8</button>
+            <button onclick="inputNumber('7')" style="height: 60px; width:60px;">7</button>
         </div>
         <div>
-            <button>6</button>
-            <button>5</button>
-            <button>4</button>
+            <button onclick="inputNumber('6')" style="height: 60px; width:60px;">6</button>
+            <button onclick="inputNumber('5')"  style="height: 60px; width:60px;">5</button>
+            <button onclick="inputNumber('4')" style="height: 60px; width:60px;">4</button>
         </div>
         <div>
-            <button>3</button>
-            <button>2</button>
-            <button>1</button>
+            <button onclick="inputNumber('3')" style="height: 60px; width:60px;" >3</button>
+            <button onclick="inputNumber('2')" style="height: 60px; width:60px;">2</button>
+            <button onclick="inputNumber('1')" style="height: 60px; width:60px;">1</button>
         </div>
         <div>
-            <button style="width: 96px;">0</button>
+            <button onclick="removeLast()" style="height: 60px; width:60px;">&#8592</button>
+            <button onclick="inputNumber('0')" style="height: 60px; width:60px;">0</button>
+            <button onclick="submitPin()" style="height: 60px; width:60px;">Enter</button>
+
         </div>
     </div>
 </div>
