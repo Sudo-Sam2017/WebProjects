@@ -1,4 +1,4 @@
-var validPINS = ['0098', '8933'];
+var validPINS = ['0098'];
 var foundPIN = [];
 
 function BankUser(fname, lname, currentChecking, currentSavings){
@@ -9,8 +9,9 @@ function BankUser(fname, lname, currentChecking, currentSavings){
 }
 
 const user1 = new BankUser('Samuel', 'Richards', '3,000', '1,000');
-const user2 = new BankUser('Aimee', 'Richards', '8,000', '500');
 const selectedUser = new BankUser('', '', '', '');
+const currentUser = new BankUser('', '', '', '');
+
 
 function inputNumber(val)
 {
@@ -47,19 +48,8 @@ function submitPin() {
             selectedUser.lname = user1.lname;
             selectedUser.currentChecking = user1.currentChecking;
             selectedUser.currentSavings = user1.currentSavings;
-            alert('Welcome ' + selectedUser.fname + '!');
-            login();
-            
-        }
-        else if(foundPIN == '8933')
-        {
-            //alert(user2.fname);
-            selectedUser.fname = user2.fname;
-            selectedUser.lname = user2.lname;
-            selectedUser.currentChecking = user2.currentChecking;
-            selectedUser.currentSavings = user2.currentSavings;
-            alert('Welcome ' + selectedUser.fname + '!');
-            login();
+            window.location.href = "ATM_Selection.html";
+
             
         }
         else{
@@ -71,17 +61,38 @@ function submitPin() {
 }
 
 function login(){
-    window.location.href = "ATM_Selection.html";  
 }
 
 function loadUserData()
 {
-const currentUser = new BankUser('', '', '', '');
-currentUser.fname = selectedUser.fname;
-currentUser.lname = selectedUser.lname;
-currentUser.currentChecking = selectedUser.currentChecking;
-currentUser.currentSavings = selectedUser.currentSavings;
-alert("This is your options page " + currentUser.fname);
+    var userFirstName = user1.fname;
+    var userLastName = user1.lname;
 
+    document.getElementById('greeting').innerHTML = "Welcome, " + userFirstName + " " + userLastName + "!";
+
+
+}
+
+function getCheckingData() {
+    document.getElementById('checkingData').style.display = 'block';
+    var d = new Date();
+    var date = d.toLocaleDateString();
+    var userChecking = user1.currentChecking;
+    document.getElementById('checkingData').innerHTML = "Checking Balance: $" + userChecking + " As of " + date;
+}
+
+function getSavingData() {
+    document.getElementById('savingData').style.display = 'block';
+    var d = new Date();
+    var date = d.toLocaleDateString();
+    var userSaving = user1.currentSavings;
+    document.getElementById('savingData').innerHTML = "Savings Balance: $" + userSaving + " As of " + date;
+}
+
+function logout() {
+    if(confirm('Are you sure you want to logout?'))
+    {
+        window.location.href('ATM.html');
+    }
 }
 

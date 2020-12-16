@@ -16,13 +16,24 @@ max-width: 100%;
 max-height: 100%;
 overflow: auto;">
     <div style="border: 4px solid black; text-align: center; margin-left: 40px; margin-top:50px; margin-right:40px;">
-
+        <div id="greeting"></div>
     </div>
 
     <div style="text-align: center; margin-left: 40px; margin-top:200px; margin-right:40px;">
+        <div>What action would you like to perform?</div>
     </div>
 
     <div style="text-align: center; margin-left: 40px; margin-top:140px; margin-right:40px;" >
+        <button onclick="getCheckingData()">View Checking Balance</button>
+        <button onclick="getSavingData()">View Savings Balance</button>
+        <button>Transfer</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div id="checkingData" style="text-align: center; margin-left: 40px; margin-top:100px; margin-right:40px; display: none; border: 1px solid black;" >
+
+    </div>
+    <div id="savingData" style="text-align: center; margin-left: 40px; margin-top:80px; margin-right:40px; display: none; border: 1px solid black;" >  
 
     </div>
 </div>
